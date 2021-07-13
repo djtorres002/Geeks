@@ -3,11 +3,25 @@ package com.example.geeks;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+
+import com.parse.FindCallback;
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseRelation;
+import com.parse.ParseUser;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -34,12 +48,34 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Login Button");
                 email = etEmail.getText().toString();
-                goToPassword(email);
+                verifyEmail(email);
             }
         });
     }
 
+    private void verifyEmail(String email) {
+        Log.d(TAG, "verifyEmail");
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereEqualTo("email", email);
+        query.setLimit(20);
+        query.findInBackground(new FindCallback<ParseUser>() {
+            @Override
+            public void done(List<ParseUser> objects, ParseException e) {
+                if(e == null) {
+                    if (objects.size() == 0) {
+                        Log.d(TAG, "No user found");
+                    } else {
+                        Log.d(TAG, "User found");
+                        goToPassword(email);
+                    }
+                }
+            }
+        });
+    }
     private void goToPassword(String email) {
-        Log.d(TAG, "goToPassword: Attempting get username");
+        Intent i = new Intent(this, PasswordActivity.class);
+        startActivity(i);
+        finish();
+        
     }
 }
