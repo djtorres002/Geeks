@@ -55,5 +55,7 @@ dependencies {
 
     implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
 
+    implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"
+
 
 }
