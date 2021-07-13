@@ -71,7 +71,73 @@
             android:layout_centerVertical="true"
             android:backgroundTint="#383A3A"
             android:ems="10"
-            android:hint="hi"
+            android:hint="Username"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tfUsername"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp">
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="#383A3A"
+            android:ems="10"
+            android:hint="Email"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tfEmail"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp">
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="#383A3A"
+            android:ems="10"
+            android:hint="Password"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfConPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tfPassword"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp">
+
+        <EditText
+            android:id="@+id/etPasswordConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="#383A3A"
+            android:ems="10"
+            android:hint="Password confirmation"
             android:textColorHint="@color/white"
             android:textColor="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -80,10 +146,10 @@
         android:id="@+id/btLogin"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_below="@id/tfUsername"
+        android:layout_below="@id/tfConPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Login"
+        android:text="Sign Up"
         android:textColor="@color/white"
         android:textSize="12sp" />
 
@@ -111,7 +177,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:textColor="@color/white"
-            android:text="Need an account?" />
+            android:text="Have already an account?" />
         <TextView
             android:id="@+id/tvSignUp2"
             android:layout_width="wrap_content"
@@ -120,7 +186,7 @@
             android:textColor="#0645AD"
             android:layout_marginTop="5dp"
             android:clickable="true"
-            android:text=" Register" />
+            android:text=" Login" />
 
     </LinearLayout>
 </RelativeLayout>
