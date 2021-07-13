@@ -54,29 +54,39 @@
         android:alpha="0.5"
         android:background="@android:color/darker_gray"/>
 
-    <EditText
-        android:id="@+id/etUsername"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfUsername"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/vLine"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:background="#333a3a"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        tools:text="Username" />
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp">
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="#383A3A"
+            android:ems="10"
+            android:hint="Username"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btLogin"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_below="@id/etUsername"
+        android:layout_below="@id/tfUsername"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="#0f70b4"
         android:text="Login"
+        android:textColor="@color/white"
         android:textSize="12sp" />
 
     <View
@@ -91,6 +101,7 @@
         android:background="@android:color/darker_gray"/>
 
     <LinearLayout
+        android:id="@+id/lLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/vLine2"
@@ -108,13 +119,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/tvSignUp"
-
             android:textColor="#0645AD"
             android:layout_marginTop="5dp"
             android:clickable="true"
             android:text=" Register" />
 
     </LinearLayout>
-
-
 </RelativeLayout>

@@ -1,10 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Geeks" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorControlNormal">#0f70b4</item>
+        <item name="colorControlActivated">#4A84AC</item>
+        <item name="colorControlHighlight">#1F71AA</item>
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">#0F70B4</item>
+        <item name="colorPrimaryVariant">#4A84AC</item>
+        <item name="colorOnPrimary">#1F71AA</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
