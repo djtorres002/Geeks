@@ -179,14 +179,14 @@
             android:textColor="@color/white"
             android:text="Have already an account?" />
         <TextView
-            android:id="@+id/tvSignUp2"
+            android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/tvSignUp"
             android:textColor="#0645AD"
             android:layout_marginTop="5dp"
             android:clickable="true"
-            android:text=" Login" />
+            android:text=" Login"
+            android:focusable="true" />
 
     </LinearLayout>
 </RelativeLayout>

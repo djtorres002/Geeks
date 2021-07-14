@@ -55,7 +55,7 @@
         android:background="@android:color/darker_gray"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tfUsername"
+        android:id="@+id/tfEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/vLine"
@@ -80,7 +80,7 @@
         android:id="@+id/btLogin"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_below="@id/tfUsername"
+        android:layout_below="@id/tfEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Login"
@@ -113,7 +113,7 @@
             android:textColor="@color/white"
             android:text="Need an account?" />
         <TextView
-            android:id="@+id/tvSignUp2"
+            android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/tvSignUp"
@@ -121,6 +121,13 @@
             android:layout_marginTop="5dp"
             android:clickable="true"
             android:text=" Register" />
-
     </LinearLayout>
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tfEmail"
+        android:layout_alignStart="@+id/tfEmail"
+        android:textColor="#Ff0000"
+        tools:text="Error" />
 </RelativeLayout>

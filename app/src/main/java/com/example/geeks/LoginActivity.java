@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -21,6 +22,8 @@ import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.parse.ParseUser;
 
+import org.parceler.Parcels;
+
 import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
@@ -30,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText etEmail;
     Button btLogin;
     String email;
+    TextView tvError;
+    TextView tvRegister;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         
         etEmail = findViewById(R.id.etEmail);
         btLogin = findViewById(R.id.btLogin);
+        tvError = findViewById(R.id.tvError);
+        tvRegister = findViewById(R.id.tvRegister);
         
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +58,20 @@ public class LoginActivity extends AppCompatActivity {
                 verifyEmail(email);
             }
         });
+
+        tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Regiter");
+                goToSignUp();
+            }
+        });
+    }
+
+    private void goToSignUp() {
+        Intent i = new Intent(this, SignUpActivity.class);
+        startActivity(i);
+        finish();
     }
 
     private void verifyEmail(String email) {
@@ -64,16 +85,19 @@ public class LoginActivity extends AppCompatActivity {
                 if(e == null) {
                     if (objects.size() == 0) {
                         Log.d(TAG, "No user found");
+                        tvError.setText("No user found");
                     } else {
                         Log.d(TAG, "User found");
-                        goToPassword(email);
+                        goToPassword(objects);
                     }
                 }
             }
         });
     }
-    private void goToPassword(String email) {
+    private void goToPassword(List<ParseUser> objects) {
         Intent i = new Intent(this, PasswordActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        i.putExtra("userInfo", Parcels.wrap(objects));
         startActivity(i);
         finish();
         
