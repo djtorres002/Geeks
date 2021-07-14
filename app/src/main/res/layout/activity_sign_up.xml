@@ -116,6 +116,7 @@
             android:backgroundTint="#383A3A"
             android:ems="10"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColorHint="@color/white"
             android:textColor="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -138,12 +139,13 @@
             android:backgroundTint="#383A3A"
             android:ems="10"
             android:hint="Password confirmation"
+            android:inputType="textPassword"
             android:textColorHint="@color/white"
             android:textColor="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btLogin"
+        android:id="@+id/btSignUp"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_below="@id/tfConPassword"
@@ -159,7 +161,7 @@
         android:layout_height="1dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_below="@id/btLogin"
+        android:layout_below="@id/btSignUp"
         android:layout_marginTop="10dp"
         android:alpha="0.5"
         android:background="@android:color/darker_gray"/>
@@ -189,4 +191,13 @@
             android:focusable="true" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tfConPassword"
+        android:layout_alignStart="@+id/tfConPassword"
+        android:textColor="#Ff0000"
+        tools:text="Error" />
 </RelativeLayout>

@@ -32,6 +32,7 @@ public class PasswordActivity extends AppCompatActivity {
     EditText etPassword;
     Button btLogin;
     TextView tvReturn;
+    TextView tvError;
     String password;
     String username;
 
@@ -49,6 +50,7 @@ public class PasswordActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btLogin = findViewById(R.id.btLogin);
         tvReturn = findViewById(R.id.tvReturn);
+        tvError = findViewById(R.id.tvError);
 
         Glide.with(this)
                 .load(objects.get(0).getParseFile("userPic").getUrl())
@@ -85,6 +87,7 @@ public class PasswordActivity extends AppCompatActivity {
             public void done(ParseUser user, ParseException e) {
                 if (e != null){
                     Log.d(TAG, "Issue with login", e);
+                    tvError.setText("Wrong password");
                     return;
                 } else {
                     goMainActivity();
