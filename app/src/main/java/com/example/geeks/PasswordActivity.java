@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.parse.LogInCallback;
+import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.ParseObject;
 
@@ -30,6 +32,8 @@ public class PasswordActivity extends AppCompatActivity {
     EditText etPassword;
     Button btLogin;
     TextView tvReturn;
+    String password;
+    String username;
 
 
 
@@ -61,7 +65,38 @@ public class PasswordActivity extends AppCompatActivity {
                 goToLogin();
             }
         });
+        btLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Login");
+                password = etPassword.getText().toString();
+                username = objects.get(0).getUsername();
+                loginUser(username, password);
 
+            }
+        });
+
+    }
+
+    private void loginUser(String username, String password) {
+        Log.d(TAG, "loginUser: Attempting to login user " + username);
+        ParseUser.logInInBackground(username, password, new LogInCallback() {
+            @Override
+            public void done(ParseUser user, ParseException e) {
+                if (e != null){
+                    Log.d(TAG, "Issue with login", e);
+                    return;
+                } else {
+                    goMainActivity();
+                }
+            }
+        });
+    }
+
+    private void goMainActivity() {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
 
     private void goToLogin() {
