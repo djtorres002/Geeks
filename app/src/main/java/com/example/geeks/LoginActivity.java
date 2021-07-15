@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
         query.findInBackground(new FindCallback<ParseUser>() {
             @Override
             public void done(List<ParseUser> objects, ParseException e) {
-                if(e == null) {
+                 if(e == null) {
                     if (objects.size() == 0) {
                         Log.d(TAG, "No user found");
                         tvError.setText("No user found");

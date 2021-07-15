@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:itemBackground="@color/white">
     <item
         android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/home_b"
         android:title="Home"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        app:itemBackground="@color/white"/>
     <item
         android:id="@+id/action_tournaments"
         android:enabled="true"
         android:icon="@drawable/versus_logo"
         android:title="Tournaments"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/white"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_profile"
         android:enabled="true"
         android:icon="@drawable/profile_logo"
         android:title="Profile"
+        app:itemBackground="@color/white"
         app:showAsAction="ifRoom" />
 </menu>
