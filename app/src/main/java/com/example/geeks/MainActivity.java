@@ -48,6 +48,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    //client id: 30l4fgc0bdj7lg5k7ah68rnifkbsfx
+    //client secret: on03mhzbv8sm5wrbbitaiyuzlrkgyw
+
     public static final String TAG = "MainActivity";
     Context context;
     Fragment fragment;

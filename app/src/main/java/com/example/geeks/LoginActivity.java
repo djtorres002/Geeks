@@ -12,7 +12,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.api.igdb.apicalypse.APICalypse;
+import com.api.igdb.apicalypse.Sort;
+import com.api.igdb.exceptions.RequestException;
+import com.api.igdb.request.IGDBWrapper;
+import com.api.igdb.request.ProtoRequestKt;
+import com.api.igdb.request.TwitchAuthenticator;
+import com.api.igdb.utils.Endpoint;
+import com.api.igdb.utils.Endpoints;
+import com.api.igdb.utils.TwitchToken;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -26,6 +34,9 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
+import proto.Game;
+import proto.GameResult;
+
 public class LoginActivity extends AppCompatActivity {
 
     public static final String TAG = "LoginActivity";
@@ -35,13 +46,23 @@ public class LoginActivity extends AppCompatActivity {
     String email;
     TextView tvError;
     TextView tvRegister;
-    
+    Endpoint endpoint;
+    String apicalypseQuery;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        
-        // Sets the Toolbar
+
+        // Java Example
+        //TwitchAuthenticator tAuth = TwitchAuthenticator.INSTANCE;
+        //TwitchToken token = tAuth.requestTwitchToken("30l4fgc0bdj7lg5k7ah68rnifkbsfx", "on03mhzbv8sm5wrbbitaiyuzlrkgyw");
+        // The instance stores the token in the object untill a new one is requested
+        //token = tAuth.getTwitchToken();
+
+        //IGDBWrapper wrapper = IGDBWrapper.INSTANCE;
+        //wrapper.setCredentials("30l4fgc0bdj7lg5k7ah68rnifkbsfx", token.getAccess_token());
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         
