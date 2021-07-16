@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181b1b"
+    tools:context=".models.NewTournamentActivity">
+
+    <TextView
+        android:id="@+id/tvTimeRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/ivGameImage"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        tools:text="xx:xx" />
+
+    <Button
+        android:id="@+id/btClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/white"
+        android:backgroundTint="#020461"
+        android:text="Close" />
+
+    <Button
+        android:id="@+id/btRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="65dp"
+        android:layout_marginBottom="34dp"
+        android:textColor="@color/white"
+        android:backgroundTint="#020461"
+        android:text="Register" />
+
+    <ImageView
+        android:id="@+id/ivGameImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvTournament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivGameImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Tournament of:"/>
+
+    <TextView
+        android:id="@+id/tvGameName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ivGameImage"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        tools:text="Game Name" />
+
+    <TextView
+        android:id="@+id/tvNOP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivGameImage"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Number of players:" />
+
+    <EditText
+        android:id="@+id/etNumberOfPlayers"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
+        android:layout_alignTop="@id/tvNOP"
+        android:layout_toEndOf="@id/tvNOP"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        android:hint="####"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNOP"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Date:" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
+        android:layout_alignTop="@id/tvD"
+        android:layout_toEndOf="@id/tvD"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="date"
+        android:textColorHint="@color/white"
+        android:hint="mm/dd/yyyy"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvD"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Time:" />
+
+    <EditText
+        android:id="@+id/etTime"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
+        android:layout_alignTop="@id/tvT"
+        android:layout_toEndOf="@id/tvT"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="datetime"
+        android:textColorHint="@color/white"
+        android:hint="hh:mm"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/etTimeZone"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
+        android:layout_alignTop="@id/etTime"
+        android:layout_toEndOf="@id/etTime"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="datetime"
+        android:textColorHint="@color/white"
+        android:hint="ex: CDT"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvT"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Platform:" />
+
+    <EditText
+        android:id="@+id/etPlatform"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
+        android:layout_alignTop="@id/tvP"
+        android:layout_toEndOf="@id/tvP"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="datetime"
+        android:textColorHint="@color/white"
+        android:hint="Xbox"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvP"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Extra details:" />
+
+    <EditText
+        android:id="@+id/etExtraD"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
+        android:layout_alignTop="@id/tvE"
+        android:layout_toEndOf="@id/tvE"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="datetime"
+        android:textColorHint="@color/white"
+        android:hint="Extra Stuff Here"
+        android:textSize="15sp" />
+
+
+
+</RelativeLayout>

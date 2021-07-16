@@ -13,7 +13,9 @@
         android:roundIcon="@drawable/g_blue"
         android:supportsRtl="true"
         android:theme="@style/Theme.Geeks">
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".models.NewTournamentActivity"></activity>
+        <activity android:name=".models.TournamentDetailsActivity" />
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".PasswordActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -24,4 +26,5 @@
         </activity>
         <activity android:name=".MainActivity" />
     </application>
+
 </manifest>

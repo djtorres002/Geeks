@@ -129,20 +129,4 @@
         android:layout_alignStart="@+id/tfEmail"
         android:textColor="#Ff0000"
         tools:text="Error" />
-
-    <TextView
-        android:id="@+id/tvExperiment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lLayout"
-        android:textColor="@color/white"
-        android:text="holi" />
-
-    <ImageView
-        android:id="@+id/ivExperiment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lLayout"
-        android:layout_toEndOf="@id/tvExperiment"
-        tools:srcCompat="@tools:sample/avatars" />
 </RelativeLayout>

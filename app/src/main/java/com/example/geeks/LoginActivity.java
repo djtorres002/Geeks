@@ -63,6 +63,12 @@ public class LoginActivity extends AppCompatActivity {
         //IGDBWrapper wrapper = IGDBWrapper.INSTANCE;
         //wrapper.setCredentials("30l4fgc0bdj7lg5k7ah68rnifkbsfx", token.getAccess_token());
 
+        //APICalypse apicalypse = new APICalypse().fields("*").sort("release_dates.date", Sort.DESCENDING);
+        //try{
+        //    List<Game> games = ProtoRequestKt.games(wrapper, apicalypse);
+        //} catch(RequestException e) {
+        //    // Do something or error
+        //}
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         
