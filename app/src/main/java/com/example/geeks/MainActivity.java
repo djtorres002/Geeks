@@ -28,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.geeks.Fragments.ProfileFragment;
 import com.example.geeks.Fragments.TournamentsFragment;
 import com.example.geeks.R;
 import com.example.geeks.Fragments.HomeFragment;
@@ -47,9 +48,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    //client id: 30l4fgc0bdj7lg5k7ah68rnifkbsfx
-    //client secret: on03mhzbv8sm5wrbbitaiyuzlrkgyw
 
     public static final String TAG = "MainActivity";
     Context context;
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment =  TournamentsFragment.newInstance(context);
                         break;
                     case R.id.action_profile:
-                        // do something here
+                        fragment = ProfileFragment.newInstance(context);
                         break;
                     default: break;
                 }

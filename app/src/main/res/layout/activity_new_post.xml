@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".models.NewPostActivity"
+    android:background="#181b1b">
+
+
+    <ImageView
+        android:id="@+id/ivGameImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:id="@+id/lLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ivGameImage"
+        android:layout_marginTop="20dp">
+
+
+        <Button
+            android:id="@+id/btCamara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#020461"
+            android:textColor="@color/white"
+            android:layout_marginEnd="20dp"
+            android:text="Take a pic" />
+
+        <Button
+            android:id="@+id/btMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#020461"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:text="Choose a file" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lLayout"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Description..."
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textColorHint="#7A7878" />
+
+    <Spinner
+        android:id="@+id/spTAGS"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTags"
+        android:layout_centerHorizontal="true"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
+    <Button
+        android:id="@+id/btPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#020461"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/spTAGS"
+        android:text="Post!" />
+
+    <TextView
+        android:id="@+id/tvTags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etDescription"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:text="Add TAGS!!!" />
+</RelativeLayout>

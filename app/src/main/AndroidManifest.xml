@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/g_blue"
         android:supportsRtl="true"
         android:theme="@style/Theme.Geeks">
-        <activity android:name=".models.NewTournamentActivity"></activity>
+        <activity android:name=".models.NewPostActivity"></activity>
+        <activity android:name=".models.NewTournamentActivity" />
         <activity android:name=".models.TournamentDetailsActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".PasswordActivity" />

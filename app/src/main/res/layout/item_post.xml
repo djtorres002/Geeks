@@ -15,6 +15,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_toEndOf="@+id/ivProfile"
+        android:textColor="@color/white"
         tools:text="Anthony" />
 
     <ImageView
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttons"
         android:layout_margin="6dp"
+        android:textColor="@color/white"
         tools:text="This is a test description!!" />
 
     <TextView
@@ -47,7 +49,8 @@
         android:layout_below="@+id/tvDescription"
         android:layout_marginTop="5dp"
         android:layout_marginStart="6dp"
-        android:text="TextView" />
+        android:textColor="@color/white"
+        android:text="Time" />
 
     <RelativeLayout
         android:id="@+id/buttons"
