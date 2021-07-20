@@ -54,21 +54,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Java Example
-        //TwitchAuthenticator tAuth = TwitchAuthenticator.INSTANCE;
-        //TwitchToken token = tAuth.requestTwitchToken("30l4fgc0bdj7lg5k7ah68rnifkbsfx", "on03mhzbv8sm5wrbbitaiyuzlrkgyw");
-        // The instance stores the token in the object untill a new one is requested
-        //token = tAuth.getTwitchToken();
+        if(ParseUser.getCurrentUser() != null){
+            goMainActivity();
+        }
 
-        //IGDBWrapper wrapper = IGDBWrapper.INSTANCE;
-        //wrapper.setCredentials("30l4fgc0bdj7lg5k7ah68rnifkbsfx", token.getAccess_token());
-
-        //APICalypse apicalypse = new APICalypse().fields("*").sort("release_dates.date", Sort.DESCENDING);
-        //try{
-        //    List<Game> games = ProtoRequestKt.games(wrapper, apicalypse);
-        //} catch(RequestException e) {
-        //    // Do something or error
-        //}
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         
@@ -93,6 +82,12 @@ public class LoginActivity extends AppCompatActivity {
                 goToSignUp();
             }
         });
+    }
+
+    private void goMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void goToSignUp() {
