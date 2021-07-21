@@ -17,7 +17,6 @@ public class Post extends ParseObject {
     public static final String KEY_IMAGE = "image";
     public static final String KEY_USER = "user";
     public static final String KEY_CREATEDAT = "createdAt";
-    public static final String KEY_PROFILEPIC= "profilePic";
 
     // Make getters and setters
     public String getDescription(){
@@ -39,12 +38,6 @@ public class Post extends ParseObject {
     public void setUser(ParseUser user){
         put(KEY_USER, user);
     }
-
-    public ParseFile getImageProfile (){
-        return getParseFile(KEY_PROFILEPIC);
-    }
-
-    public void setImageProfile(ParseFile image){put(KEY_PROFILEPIC, image); }
 
 
     public static String calculateTimeAgo(Date createdAt) {
