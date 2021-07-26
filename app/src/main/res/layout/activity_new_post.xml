@@ -51,7 +51,6 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="Description..."
-        android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textAlignment="center"
         android:textColorHint="#7A7878" />

@@ -3,8 +3,10 @@ package com.example.geeks.models;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -29,7 +31,7 @@ import java.io.File;
 public class NewPostActivity extends AppCompatActivity {
 
     public static final String TAG = "PostActivity";
-    public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 532;
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     public String photoFileName = "photo.jpg";
     File photoFile;
     Button btCamara;
@@ -47,6 +49,7 @@ public class NewPostActivity extends AppCompatActivity {
         btCamara = findViewById(R.id.btCamara);
         ivGameImage = findViewById(R.id.ivGameImage);
         btPost = findViewById(R.id.btPost);
+        etDescription = findViewById(R.id.etDescription);
 
         btPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,42 +73,22 @@ public class NewPostActivity extends AppCompatActivity {
     }
 
     private void onLaunchCamara() {
-        // create Intent to take a picture and return control to the calling application
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Create a File reference for future access
-        photoFile = getPhotoFileUri(photoFileName);
-
-        // wrap File object into a content provider
-        // required for API >= 24
-        // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
-        Uri fileProvider = FileProvider.getUriForFile(this, "com.codepath.fileprovider", photoFile);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
-
-        Log.d(TAG, "onClick: Regiter");
-
-        // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
-        // So as long as the result is not null, it's safe to use the intent.
-        if (intent.resolveActivity(this.getPackageManager()) != null) {
-            // Start the image capture intent to take photo
-            startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        try {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(context, "Failure taking a photo:" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
-    private File getPhotoFileUri(String photoFileName) {
-        // Get safe storage directory for photos
-        // Use `getExternalFilesDir` on Context to access package-specific directories.
-        // This way, we don't need to request external read/write runtime permissions.
-        File mediaStorageDir = new File(this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), TAG);
-
-        // Create the storage directory if it does not exist
-        if (!mediaStorageDir.exists() && !mediaStorageDir.mkdirs()){
-            Log.d(TAG, "failed to create directory");
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            ivGameImage.setImageBitmap(imageBitmap);
         }
-
-        // Return the file target for the photo based on filename
-        File file = new File(mediaStorageDir.getPath() + File.separator + photoFileName);
-
-        return file;
     }
 
     private void savePost(String description, ParseUser user, File photoFile, ImageView ivGameImage, Context context) {
