@@ -4,6 +4,14 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
     <application
         android:name=".ParseApplication"
         android:allowBackup="true"
@@ -14,14 +22,14 @@
         android:theme="@style/Theme.Geeks">
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.codepath.fileprovider"
+            android:authorities="com.example.android.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/fileprovider" />
+                android:resource="@xml/file_paths"/>
         </provider>
-        <activity android:name=".models.NewPostActivity"/>
+                <activity android:name=".models.NewPostActivity"/>
         <activity android:name=".models.NewTournamentActivity" />
         <activity android:name=".models.TournamentDetailsActivity" />
         <activity android:name=".SignUpActivity" />

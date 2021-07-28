@@ -2,13 +2,16 @@ package com.example.geeks;
 
 import android.app.Application;
 
+import com.example.geeks.models.Post;
 import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class ParseApplication extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
+        ParseObject.registerSubclass(Post.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId("Ct0CLm76IN7SxWq704o1QaRzm0Xgq7Qy1Gtn3BpY")
