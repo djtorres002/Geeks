@@ -41,7 +41,7 @@ public class NewPostActivity extends AppCompatActivity {
     public static final String TAG = "PostActivity";
     static final int REQUEST_IMAGE_CAPTURE = 1;
     public String photoFileName = "photo.jpg";
-    File photoFile;
+
     Button btCamara;
     Button btMedia;
     Button btPost;
@@ -49,7 +49,7 @@ public class NewPostActivity extends AppCompatActivity {
     ImageView ivGameImage;
     String currentPhotoPath;
     Uri photoUri;
-
+    File photoFile;
     Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +101,6 @@ public class NewPostActivity extends AppCompatActivity {
                         photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-
             }
         }
     }
@@ -133,9 +132,10 @@ public class NewPostActivity extends AppCompatActivity {
                 if(e == null){
                     etDescription.setText("");
                     ivGameImage.setImageDrawable(null);
-                    Toast.makeText(context, "Successfully post this!", Toast.LENGTH_SHORT).show();
+
+                    //Toast.makeText(context, "Successfully post this!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(context, "Unable to post this! " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context, "Unable to post this! " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

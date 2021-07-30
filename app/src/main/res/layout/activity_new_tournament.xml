@@ -122,7 +122,7 @@
         android:text="Date:" />
 
     <DatePicker
-        android:id="@+id/etDate"
+        android:id="@+id/dpDate"
         android:layout_width="100dp"
         android:layout_height="31dp"
         android:layout_alignTop="@id/tvD"

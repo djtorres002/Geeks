@@ -46,8 +46,6 @@ public class LoginActivity extends AppCompatActivity {
     String email;
     TextView tvError;
     TextView tvRegister;
-    Endpoint endpoint;
-    String apicalypseQuery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +76,6 @@ public class LoginActivity extends AppCompatActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: Regiter");
                 goToSignUp();
             }
         });
